@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:netflix_redesign/view/detail/model/detail.dart';
-import 'package:netflix_redesign/view/movies/model/movie.dart';
+import '../view/detail/model/detail.dart';
+import '../view/movies/model/movie.dart';
 
 const String apiKey = '2d4d6c169da2c07b0371c7c1ac1c3648';
 const String baseUrl = 'https://api.themoviedb.org/3/';

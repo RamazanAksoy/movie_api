@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:netflix_redesign/component/bottom_bar.dart';
+
+import 'component/bottom_bar.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

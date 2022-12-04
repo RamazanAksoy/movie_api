@@ -4,15 +4,16 @@ import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
-import 'package:netflix_redesign/view/movies/model/movie.dart';
-import 'package:netflix_redesign/view/detail/view/screen/detail.dart';
-import 'package:netflix_redesign/utils/services.dart';
-import 'package:netflix_redesign/component/bottom_bar.dart';
-import 'package:netflix_redesign/view/home/view/widgets/category_list.dart';
-import 'package:netflix_redesign/view/home/view/widgets/home_header.dart';
-import 'package:netflix_redesign/view/home/view/widgets/search_bar.dart';
+import '../../../movies/model/movie.dart';
+import '../../../detail/view/screen/detail.dart';
+import '../../../../utils/services.dart';
+import '../../../../component/bottom_bar.dart';
+import '../widgets/category_list.dart';
+import '../widgets/home_header.dart';
+import '../widgets/search_bar.dart';
 
-import '../../../../constants.dart';
+import '../../../../core/constans/colors.dart';
+import '../../../../utils/helpers/text_styles.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -83,7 +84,7 @@ class _HomeScreenState extends State<HomeScreen> {
       children: [
         Padding(
           padding: const EdgeInsets.only(left: 35),
-          child: Text('Popular', style: kSectionTitle),
+          child: Text('Popular', style: Styles.kSectionTitle),
         ),
         const SizedBox(height: 24),
         FutureBuilder<Movie>(
@@ -147,13 +148,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text('${snapshot.error}', style: kErrorText),
+                  Text('${snapshot.error}', style: Styles.kErrorText),
                 ],
               );
             }
 
-            return Padding(
-              padding: const EdgeInsets.only(top: 100),
+            return const Padding(
+              padding: EdgeInsets.only(top: 100),
               child: Center(
                 child: CircularProgressIndicator(
                   valueColor: AlwaysStoppedAnimation<Color>(AppColors.kPrimaryColor),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:netflix_redesign/view/home/model/category.dart';
-import 'package:netflix_redesign/view/home/view/widgets/category_item.dart';
+import '../../model/category.dart';
+import 'category_item.dart';
 
-import '../../../../constants.dart';
+import '../../../../utils/helpers/text_styles.dart';
 
 class CategoryList extends StatefulWidget {
   const CategoryList({Key? key}) : super(key: key);
@@ -21,7 +21,7 @@ class _CategoryListState extends State<CategoryList> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('Category', style: kSectionTitle),
+          Text('Category', style: Styles.kSectionTitle),
           const SizedBox(height: 14),
           SizedBox(
             height: size.height / 9,

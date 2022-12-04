@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:netflix_redesign/core/constans/colors.dart';
+import '../../core/constans/colors.dart';
 
 class Styles {
   static TextStyle kHeaderTitle = const TextStyle(fontSize: 24, fontWeight: FontWeight.w400, fontFamily: 'Nexa', color: AppColors.kTextColor);
@@ -78,6 +78,6 @@ class Styles {
     fontSize: 16,
     fontWeight: FontWeight.w400,
     fontFamily: 'Nexa',
-    color: AppColors.AppColors.kPrimaryColor,
+    color: AppColors.kPrimaryColor,
   );
 }

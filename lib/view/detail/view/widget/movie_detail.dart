@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:jiffy/jiffy.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import 'package:netflix_redesign/view/detail/model/detail.dart';
-import 'package:netflix_redesign/view/detail/view/widget/custom_button.dart';
+import '../../model/detail.dart';
+import 'custom_button.dart';
 
-import '../../../../constants.dart';
+import '../../../../core/constans/colors.dart';
+import '../../../../utils/helpers/text_styles.dart';
 
 class MovieDetail extends StatefulWidget {
   final Future<Details> futureMovieDetail;
@@ -58,7 +59,7 @@ class _MovieDetailState extends State<MovieDetail> {
               width: size.width - 60,
               child: Text(
                 widget.title,
-                style: kMovieTitle,
+                style: Styles.kMovieTitle,
                 textAlign: TextAlign.center,
               ),
             ),
@@ -67,7 +68,7 @@ class _MovieDetailState extends State<MovieDetail> {
               width: size.width - 60,
               child: Text(
                 widget.overview,
-                style: kSectionMovieSubtitle,
+                style: Styles.kSectionMovieSubtitle,
                 textAlign: TextAlign.center,
                 maxLines: 8,
               ),
@@ -78,25 +79,25 @@ class _MovieDetailState extends State<MovieDetail> {
               children: [
                 Container(
                   height: 24,
-                  color: kBoxColor.withOpacity(0.2),
+                  color: AppColors.kBoxColor.withOpacity(0.2),
                   width: MediaQuery.of(context).size.width / 2 - 60,
                   child: Center(
-                    child: Text('Popular among friend', style: kMovieTags),
+                    child: Text('Popular among friend', style: Styles.kMovieTags),
                   ),
                 ),
                 const SizedBox(width: 8),
                 Container(
                   height: 24,
-                  color: kBoxColor.withOpacity(0.2),
+                  color: AppColors.kBoxColor.withOpacity(0.2),
                   width: size.width / 6 - 25,
                   child: Center(
-                    child: widget.adult == true ? Text('18+', style: kMovieTags) : Text('13+', style: kMovieTags),
+                    child: widget.adult == true ? Text('18+', style: Styles.kMovieTags) : Text('13+', style: Styles.kMovieTags),
                   ),
                 ),
                 const SizedBox(width: 8),
                 Container(
                   height: 24,
-                  color: kBoxColor.withOpacity(0.2),
+                  color: AppColors.kBoxColor.withOpacity(0.2),
                   padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                   width: size.width / 5 - 25,
                   child: Center(
@@ -106,7 +107,7 @@ class _MovieDetailState extends State<MovieDetail> {
                       children: [
                         SvgPicture.asset('assets/icons/star.svg'),
                         const SizedBox(width: 2),
-                        Text(widget.rating, style: kMovieTags),
+                        Text(widget.rating, style: Styles.kMovieTags),
                       ],
                     ),
                   ),
@@ -120,14 +121,14 @@ class _MovieDetailState extends State<MovieDetail> {
                 if (snapshot.hasData) {
                   var genres = snapshot.data!.genres!.map((e) => e.name!.toString()).toList();
 
-                  return Text(Jiffy(widget.date).year.toString() + ', ' + genres.join(" , "), style: kMovieGenre);
+                  return Text(Jiffy(widget.date).year.toString() + ', ' + genres.join(" , "), style: Styles.kMovieGenre);
                 } else if (snapshot.hasError) {
                   return Text(
                     '${snapshot.error}',
-                    style: kMovieGenre,
+                    style: Styles.kMovieGenre,
                   );
                 }
-                return Text('', style: kMovieGenre);
+                return Text('', style: Styles.kMovieGenre);
               },
             ),
             const SizedBox(height: 38),

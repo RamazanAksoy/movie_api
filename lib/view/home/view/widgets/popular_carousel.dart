@@ -1,13 +1,12 @@
 // ignore_for_file: must_be_immutable
-import 'package:flutter/material.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-
-import 'package:netflix_redesign/view/movies/model/movie.dart';
-import 'package:netflix_redesign/view/detail/view/screen/detail.dart';
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter/material.dart';
 import 'package:netflix_redesign/component/loading.dart';
+import 'package:netflix_redesign/view/detail/view/screen/detail.dart';
+import 'package:netflix_redesign/view/movies/model/movie.dart';
 
-import '../../../../constants.dart';
+import '../../../../utils/helpers/text_styles.dart';
 
 class PopularCarousel extends StatefulWidget {
   int current;
@@ -35,7 +34,7 @@ class _PopularCarouselState extends State<PopularCarousel> {
       children: [
         Padding(
           padding: const EdgeInsets.only(left: 35),
-          child: Text('Popular', style: kSectionTitle),
+          child: Text('Popular', style: Styles.kSectionTitle),
         ),
         const SizedBox(height: 24),
         FutureBuilder<Movie>(
@@ -99,7 +98,7 @@ class _PopularCarouselState extends State<PopularCarousel> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text('${snapshot.error}', style: kErrorText),
+                  Text('${snapshot.error}', style: Styles.kErrorText),
                 ],
               );
             }

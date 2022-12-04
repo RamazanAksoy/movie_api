@@ -3,10 +3,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jiffy/jiffy.dart';
-import 'package:netflix_redesign/constants.dart';
 import 'package:netflix_redesign/view/movies/model/movie.dart';
 import 'package:netflix_redesign/view/detail/view/screen/detail.dart';
 import 'package:netflix_redesign/utils/services.dart';
+
+import '../../../../core/constans/colors.dart';
 
 class SearchItem extends StatelessWidget {
   final Result data;
@@ -57,7 +58,7 @@ class SearchItem extends StatelessWidget {
                                   if (loadingProgress == null) return child;
                                   return Center(
                                     child: CircularProgressIndicator(
-                                      valueColor: AlwaysStoppedAnimation<Color>(
+                                      valueColor: const AlwaysStoppedAnimation<Color>(
                                         AppColors.kPrimaryColor,
                                       ),
                                       value: loadingProgress.expectedTotalBytes != null
@@ -78,8 +79,8 @@ class SearchItem extends StatelessWidget {
                         width: MediaQuery.of(context).size.width * 0.25,
                         child: Text(
                           data.title.toString(),
-                          style: TextStyle(
-                            color: kTextColor,
+                          style: const TextStyle(
+                            color: AppColors.kTextColor,
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
                           ),
@@ -95,8 +96,8 @@ class SearchItem extends StatelessWidget {
                           const SizedBox(width: 5),
                           Text(
                             data.voteAverage.toString(),
-                            style: TextStyle(
-                              color: kTextColor,
+                            style: const TextStyle(
+                              color: AppColors.kTextColor,
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
                             ),
@@ -108,8 +109,8 @@ class SearchItem extends StatelessWidget {
                   const SizedBox(height: 10),
                   Text(
                     data.releaseDate!.isNotEmpty ? Jiffy(data.releaseDate.toString()).yMMMd : 'N/A',
-                    style: TextStyle(
-                      color: kTextColor,
+                    style: const TextStyle(
+                      color: AppColors.kTextColor,
                       fontSize: 12,
                       fontWeight: FontWeight.bold,
                     ),

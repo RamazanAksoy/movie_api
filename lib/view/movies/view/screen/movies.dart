@@ -6,7 +6,7 @@ import 'package:netflix_redesign/utils/services.dart';
 import 'package:netflix_redesign/view/movies/view/widget/special_list.dart';
 import 'package:netflix_redesign/view/movies/view/widget/trending_list.dart';
 
-import '../../../../constants.dart';
+import '../../../../core/constans/colors.dart';
 
 class Movies extends StatefulWidget {
   const Movies({Key? key}) : super(key: key);

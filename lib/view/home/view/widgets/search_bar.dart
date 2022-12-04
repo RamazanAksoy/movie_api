@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:netflix_redesign/view/home/view/widgets/search.dart';
+import 'search.dart';
 
-import '../../../../constants.dart';
+import '../../../../core/constans/colors.dart';
+import '../../../../utils/helpers/text_styles.dart';
 
 class SearchBar extends StatefulWidget {
   const SearchBar({Key? key}) : super(key: key);
@@ -23,18 +24,18 @@ class _SearchBarState extends State<SearchBar> {
       margin: const EdgeInsets.fromLTRB(35, 37, 35, 40),
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 9),
       decoration: BoxDecoration(
-        color: kTextColor.withOpacity(0.1),
+        color: AppColors.kTextColor.withOpacity(0.1),
         borderRadius: const BorderRadius.all(
           Radius.circular(15),
         ),
       ),
       child: TextField(
         controller: _searchController,
-        style: kSearchHint.apply(color: kTextColor),
+        style: Styles.kSearchHint.apply(color: AppColors.kTextColor),
         decoration: InputDecoration(
           icon: SvgPicture.asset('assets/icons/search.svg'),
           hintText: query.isEmpty ? 'Search Movies' : query,
-          hintStyle: kSearchHint,
+          hintStyle: Styles.kSearchHint,
           border: InputBorder.none,
         ),
         onSubmitted: (value) {

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:netflix_redesign/view/movies/model/movie.dart';
-import 'package:netflix_redesign/component/loading.dart';
-import 'package:netflix_redesign/view/movies/view/widget/trending_item.dart';
 
-import '../../../../constants.dart';
+import '../../../../component/loading.dart';
+import '../../../../core/constans/colors.dart';
+import '../../../../utils/helpers/text_styles.dart';
+import '../../model/movie.dart';
+import 'trending_item.dart';
 
 class TrendingList extends StatelessWidget {
   final Future<Movie> futureTrendingMovie;
@@ -20,7 +21,7 @@ class TrendingList extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 35),
           child: Text(
             'Trending',
-            style: kSectionMovieTitle,
+            style: Styles.kSectionMovieTitle,
           ),
         ),
         const SizedBox(height: 24),
@@ -32,7 +33,7 @@ class TrendingList extends StatelessWidget {
             } else if (snapshot.hasError) {
               return Text(
                 '${snapshot.error}',
-                style: kSectionMovieSubtitle.apply(
+                style: Styles.kSectionMovieSubtitle.apply(
                   color: AppColors.kPrimaryColor,
                 ),
               );

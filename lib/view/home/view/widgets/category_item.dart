@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../../../constants.dart';
+import '../../../../core/constans/colors.dart';
+import '../../../../utils/helpers/text_styles.dart';
 
 class CategoryItem extends StatelessWidget {
   final Size size;
@@ -22,7 +23,7 @@ class CategoryItem extends StatelessWidget {
       height: size.height / 9,
       width: size.width / 3 - 60,
       decoration: BoxDecoration(
-        color: kBoxColor.withOpacity(0.1),
+        color: AppColors.kBoxColor.withOpacity(0.1),
         borderRadius: const BorderRadius.all(Radius.circular(15)),
       ),
       child: Column(
@@ -31,7 +32,7 @@ class CategoryItem extends StatelessWidget {
         children: [
           SvgPicture.asset(svgPath),
           const SizedBox(height: 4),
-          Text(title, style: kCategoryTitle),
+          Text(title, style: Styles.kCategoryTitle),
         ],
       ),
     );

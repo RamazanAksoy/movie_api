@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../constants.dart';
+import '../../../../utils/helpers/text_styles.dart';
 
 class HomeHeader extends StatelessWidget {
   const HomeHeader({Key? key}) : super(key: key);
@@ -16,9 +16,9 @@ class HomeHeader extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Hi, Tustoz', style: kHeaderTitle),
+              Text('Hi, Tustoz', style: Styles.kHeaderTitle),
               const SizedBox(height: 7),
-              Text("See What's Next", style: kHeaderSubtitle),
+              Text("See What's Next", style: Styles.kHeaderSubtitle),
             ],
           ),
           Image.asset('assets/images/avatar.png', scale: 4),

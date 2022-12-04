@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:netflix_redesign/utils/services.dart';
+import '../../../../utils/services.dart';
 
-import 'package:netflix_redesign/view/home/view/widgets/search_bar.dart';
-import 'package:netflix_redesign/constants.dart';
-import 'package:netflix_redesign/view/home/view/widgets/search_list.dart';
+import 'search_bar.dart';
+import 'search_list.dart';
+
+import '../../../../core/constans/colors.dart';
 
 class SearchScreen extends StatefulWidget {
   final String query;

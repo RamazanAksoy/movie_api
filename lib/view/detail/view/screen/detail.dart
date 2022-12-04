@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
-import 'package:netflix_redesign/utils/services.dart';
-import 'package:netflix_redesign/view/detail/view/widget/movie_detail.dart';
+import '../../../../utils/services.dart';
+import '../widget/movie_detail.dart';
 
 import '../../../../core/constans/colors.dart';
 

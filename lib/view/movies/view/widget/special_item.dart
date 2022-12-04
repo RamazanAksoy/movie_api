@@ -7,7 +7,7 @@ import 'package:netflix_redesign/view/movies/model/movie.dart';
 import 'package:netflix_redesign/utils/services.dart';
 import 'package:netflix_redesign/view/detail/view/screen/detail.dart';
 
-import '../../../../constants.dart';
+import '../../../../utils/helpers/text_styles.dart';
 
 class SpecialItem extends StatefulWidget {
   int current;
@@ -84,7 +84,7 @@ class _SpecialItemState extends State<SpecialItem> {
                       children: [
                         Text(
                           'Special For You',
-                          style: kSpecial,
+                          style: Styles.kSpecial,
                         ),
                         const SizedBox(height: 4),
                         SizedBox(
@@ -92,7 +92,7 @@ class _SpecialItemState extends State<SpecialItem> {
                           child: Center(
                             child: Text(
                               item.title.toString(),
-                              style: kMovieTitle,
+                              style: Styles.kMovieTitle,
                               textAlign: TextAlign.center,
                             ),
                           ),

@@ -3,11 +3,11 @@ import 'package:jiffy/jiffy.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
-import 'package:netflix_redesign/view/movies/model/movie.dart';
-import 'package:netflix_redesign/view/detail/view/screen/detail.dart';
-import 'package:netflix_redesign/utils/services.dart';
-
-import '../../../../constants.dart';
+import '../../../../core/constans/colors.dart';
+import '../../../../utils/helpers/text_styles.dart';
+import '../../model/movie.dart';
+import '../../../detail/view/screen/detail.dart';
+import '../../../../utils/services.dart';
 
 class TrendingItem extends StatelessWidget {
   final AsyncSnapshot<Movie> snapshot;
@@ -55,7 +55,7 @@ class TrendingItem extends StatelessWidget {
               borderRadius: const BorderRadius.all(
                 Radius.circular(15),
               ),
-              color: kBoxColor.withOpacity(0.1),
+              color: AppColors.kBoxColor.withOpacity(0.1),
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -86,7 +86,7 @@ class TrendingItem extends StatelessWidget {
                         child: Text(
                           title,
                           maxLines: 2,
-                          style: kSectionMovieTitle,
+                          style: Styles.kSectionMovieTitle,
                         ),
                       ),
                       const SizedBox(height: 16),
@@ -95,7 +95,7 @@ class TrendingItem extends StatelessWidget {
                         child: Text(
                           snapshot.data!.results![index].overview.toString(),
                           maxLines: 3,
-                          style: kSectionMovieSubtitle.copyWith(
+                          style: Styles.kSectionMovieSubtitle.copyWith(
                             overflow: TextOverflow.clip,
                           ),
                         ),
@@ -107,7 +107,7 @@ class TrendingItem extends StatelessWidget {
                           const SizedBox(width: 8),
                           Text(
                             Jiffy(snapshot.data!.results![index].releaseDate.toString()).yMMMd,
-                            style: kSectionMovieSubtitle,
+                            style: Styles.kSectionMovieSubtitle,
                           ),
                         ],
                       ),
@@ -116,12 +116,12 @@ class TrendingItem extends StatelessWidget {
                 ),
                 const SizedBox(width: 16),
                 Container(
-                  decoration: BoxDecoration(
-                    borderRadius: const BorderRadius.only(
+                  decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(4.0),
                       bottomRight: Radius.circular(4.0),
                     ),
-                    color: kSecondaryColor,
+                    color: AppColors.kSecondaryColor,
                   ),
                   height: MediaQuery.of(context).size.height * 0.06,
                   width: MediaQuery.of(context).size.width * 0.08,
@@ -134,7 +134,7 @@ class TrendingItem extends StatelessWidget {
                       const SizedBox(height: 5),
                       Text(
                         snapshot.data!.results![index].voteAverage.toString(),
-                        style: kMovieRating.apply(color: AppColors.kBackgroundColor),
+                        style: Styles.kMovieRating.apply(color: AppColors.kBackgroundColor),
                       ),
                     ],
                   ),
