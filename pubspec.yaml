@@ -1,0 +1,50 @@
+name: netflix_redesign
+description: A new Flutter project.
+
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.19.0-363.0.dev <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  http: ^0.13.4
+  jiffy: ^5.0.0
+  cached_network_image: ^3.2.0
+  flutter_svg: ^1.0.0
+  carousel_slider: ^4.0.0
+  dots_indicator: ^2.0.0
+  responsive_sizer: ^3.1.1
+  google_fonts: ^3.0.1
+  shimmer: ^2.0.0
+  dio: ^4.0.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^1.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/icons/
+    - assets/images/
+
+  fonts:
+    - family: Nexa
+      fonts:
+        - asset: assets/fonts/Nexa.otf
+
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins-Regular.ttf
+        - asset: assets/fonts/Poppins-Medium.ttf
+        - asset: assets/fonts/Poppins-SemiBold.ttf
+        - asset: assets/fonts/Poppins-Bold.ttf
