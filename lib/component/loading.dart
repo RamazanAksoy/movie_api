@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../constants.dart';
+import '../core/constans/colors.dart';
 
 class Loading extends StatelessWidget {
   final EdgeInsetsGeometry padding;
@@ -11,7 +10,7 @@ class Loading extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: padding,
-      child: Center(
+      child: const Center(
         child: CircularProgressIndicator(
           valueColor: AlwaysStoppedAnimation<Color>(AppColors.kPrimaryColor),
         ),

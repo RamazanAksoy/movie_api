@@ -6,7 +6,8 @@ import 'package:netflix_redesign/view/movies/model/movie.dart';
 import 'package:netflix_redesign/view/home/view/widgets/search_item.dart';
 import 'package:netflix_redesign/component/loading.dart';
 
-import '../../../../constants.dart';
+import '../../../../core/constans/colors.dart';
+import '../../../../utils/helpers/text_styles.dart';
 
 class SearchList extends StatefulWidget {
   late Future<Movie> futureSearchMovie;
@@ -61,7 +62,7 @@ class _SearchListState extends State<SearchList> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const SizedBox(height: 250),
-                Text('${snapshot.error}', style: kErrorText),
+                Text('${snapshot.error}', style: Styles.kErrorText),
               ],
             );
           }

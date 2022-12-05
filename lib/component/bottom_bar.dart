@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:netflix_redesign/view/home/view/screen/home.dart';
-import 'package:netflix_redesign/view/movies/view/screen/movies.dart';
+import '../view/home/view/screen/home.dart';
+import '../view/movies/view/screen/movies.dart';
 
 import '../core/constans/colors.dart';
 
@@ -30,14 +30,14 @@ class _BottomBarState extends State<BottomBar> {
       extendBody: true,
       floatingActionButton: FloatingActionButton(
         child: SvgPicture.asset('assets/icons/movie.svg'),
-        backgroundColor: AppColors.AppColors.kPrimaryColor,
+        backgroundColor: AppColors.kPrimaryColor,
         onPressed: () {},
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomNavigationBar(
         elevation: 0.0,
         type: BottomNavigationBarType.fixed,
-        backgroundColor: AppColors.AppColors.kBackgroundColor.withOpacity(0.1),
+        backgroundColor: AppColors.kBackgroundColor.withOpacity(0.1),
         items: [
           BottomNavigationBarItem(
             icon: SvgPicture.asset(
@@ -45,7 +45,7 @@ class _BottomBarState extends State<BottomBar> {
             ),
             activeIcon: SvgPicture.asset(
               'assets/icons/home.svg',
-              color: AppColors.AppColors.kPrimaryColor,
+              color: AppColors.kPrimaryColor,
             ),
             label: 'home',
           ),
@@ -55,7 +55,7 @@ class _BottomBarState extends State<BottomBar> {
             ),
             activeIcon: SvgPicture.asset(
               'assets/icons/calendar.svg',
-              color: AppColors.AppColors.kPrimaryColor,
+              color: AppColors.kPrimaryColor,
             ),
             label: 'schedule',
           ),
@@ -70,7 +70,7 @@ class _BottomBarState extends State<BottomBar> {
             ),
             activeIcon: SvgPicture.asset(
               'assets/icons/compass.svg',
-              color: AppColors.AppColors.kPrimaryColor,
+              color: AppColors.kPrimaryColor,
             ),
             label: 'discover',
           ),
@@ -80,12 +80,12 @@ class _BottomBarState extends State<BottomBar> {
             ),
             activeIcon: SvgPicture.asset(
               'assets/icons/profile_circle.svg',
-              color: AppColors.AppColors.kPrimaryColor,
+              color: AppColors.kPrimaryColor,
             ),
             label: 'profile',
           ),
         ],
-        selectedItemColor: AppColors.AppColors.kPrimaryColor,
+        selectedItemColor: AppColors.kPrimaryColor,
         showSelectedLabels: false,
         showUnselectedLabels: false,
         enableFeedback: false,
